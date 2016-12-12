@@ -1,0 +1,95 @@
+<!doctype html>
+<html class="no-js" lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Three Bee Project</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		<link rel="stylesheet" href="resources/css/main.css"> 
+	</head>
+	<body>
+		<!--[if lt IE 8]>
+			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+
+		<nav id="navigation" class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Three Bee Site</a>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Add your site or application content here -->
+		<section id="main-content" class="container">
+			<h3>Genome Sequences</h3>
+			<div id="organisms" class="row">
+				
+			</div>
+		</section>
+
+		<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src="resources/js/template7.min.js"></script>
+		<script src="resources/js/links.json"></script>
+
+		<script id="organism-listing" type="text/template7">
+			{{#each organism}}
+				<div class="panel panel-default">
+					<div class="panel-heading">{{name}} {{assembly}}</div>
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Link</th>
+								<th>Description</th>
+								<th>Category</th>
+							</tr>
+						</thead>
+						<tbody>	
+							{{#each dataset}}					
+								<tr>
+									<td>{{linkTo name html_link}}
+									<td>{{descr}}</td>
+									<td>{{category}}</td>
+								</tr>
+							{{/each}}
+						</tbody>
+					</table>
+				</div>
+			{{/each}}
+		</script>
+
+		<script type="text/javascript">
+			
+			Template7.registerHelper('linkTo', function (name, link, options) {
+				return "<a href=\"" + link + "\" target=\"_blank\">" + name + "</a>";
+			});
+
+			$(document).ready(function() {
+
+				/*
+
+				startup 
+				
+				*/
+
+				// ORGANISMS variable comes from the .json file.
+				// get the html
+				var organism_template = $("#organism-listing").html();
+				// compile
+				var compiled_organism_template = Template7.compile(organism_template);
+				// load to page
+				$('#organisms').html(compiled_organism_template(ORGANISMS));
+
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+var ORGANISMS = {
+	organism :{
+		bee : {
+			name : "Beeeeee",
+			assembly : "string",
+			dataset : [
+				{
+					name : "string",
+					html_link : "http://www.Google.com",
+					descr : "this is a test",
+					category : "stuff"
+				}
+			]
+		},
+		hippo : {
+			name : "Hippo",
+			assembly : "string",
+			dataset : [
+				{
+					name : "string",
+					html_link : "www.hippo.com",
+					descr : "showing hippos",
+					category : "stuffffffs"
+				}
+			]
+		},
+	}
+};

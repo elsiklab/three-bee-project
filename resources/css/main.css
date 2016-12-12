@@ -1,0 +1,14 @@
+.container {
+	text-align: center;
+}
+
+nav.navbar {
+	border-radius: 0; 
+}
+
+table thead th {
+	width: 33%;
+}
+table tbody td {
+	text-align: left;
+}
