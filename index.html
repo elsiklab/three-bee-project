@@ -6,14 +6,14 @@
 		<title>Three Bee Project</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
+
 		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 		<link rel="apple-touch-icon" href="apple-touch-icon.png">
 
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-		<link rel="stylesheet" href="resources/css/main.css"> 
+		<link rel="stylesheet" href="resources/css/main.css">
 	</head>
 	<body>
 		<!--[if lt IE 8]>
@@ -32,7 +32,7 @@
 		<section id="main-content" class="container">
 			<h3>Genome Sequences</h3>
 			<div id="organisms" class="row">
-				
+
 			</div>
 		</section>
 
@@ -44,7 +44,7 @@
 		<script id="organism-listing" type="text/template7">
 			{{#each organism}}
 				<div class="panel panel-default">
-					<div class="panel-heading">{{name}} {{assembly}}</div>
+					<div class="panel-heading">{{name}} ({{assembly}})</div>
 					<table class="table">
 						<thead>
 							<tr>
@@ -53,8 +53,8 @@
 								<th>Category</th>
 							</tr>
 						</thead>
-						<tbody>	
-							{{#each dataset}}					
+						<tbody>
+							{{#each dataset}}
 								<tr>
 									<td>{{linkTo name html_link}}
 									<td>{{descr}}</td>
@@ -68,7 +68,7 @@
 		</script>
 
 		<script type="text/javascript">
-			
+
 			Template7.registerHelper('linkTo', function (name, link, options) {
 				return "<a href=\"" + link + "\" target=\"_blank\">" + name + "</a>";
 			});
@@ -77,8 +77,8 @@
 
 				/*
 
-				startup 
-				
+				startup
+
 				*/
 
 				// ORGANISMS variable comes from the .json file.

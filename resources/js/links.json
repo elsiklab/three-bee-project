@@ -1,28 +1,190 @@
 var ORGANISMS = {
 	organism :{
-		bee : {
-			name : "Beeeeee",
-			assembly : "string",
+		amel : {
+			name : "Apis mellifera",
+			assembly : "Amel_4.5",
 			dataset : [
 				{
-					name : "string",
-					html_link : "http://www.Google.com",
-					descr : "this is a test",
-					category : "stuff"
+					name : "Expanded-Comparative Gene Set",
+					html_link : "/datasets/Amel_comparative_gene_set.gff3.gz",
+					descr : "",
+					category : "Gene Prediction"
+				},
+				{
+					name : "RefSeq",
+					html_link : "/datasets/Amel_4.5_Chromosomes_RefSeq_proteincoding_genes_11182016.gff3.gz",
+					descr : "",
+					category : "Gene Prediction"
+				},
+				{
+					name : "OGSv3.2",
+					html_link : "/datasets/amel_OGSv3.2_with_UTR_with_orthologs_chromosomes.gff3.gz",
+					descr : "",
+					category : "Gene Prediction"
+				},
+				{
+					name : "Augustus Comparative",
+					html_link : "/datasets/mellifera.cgp_chromosomes.gff3.gz",
+					descr : "",
+					category : "Gene Prediction"
+				},
+				{
+					name : "Maker",
+					html_link : "/datasets/Amel_4.5.maker.consensus.set_chromosomes.gff3.gz",
+					descr : "",
+					category : "Gene Prediction"
+				},
+				{
+					name : "Augustus with Peptide",
+					html_link : "/datasets/au12_scaffolds_with_exons_chromosomes.gff3.gz",
+					descr : "",
+					category : "Gene Prediction"
+				},
+				{
+					name : "Augustus with RNAseq",
+					html_link : "/datasets/au9_scaffold_with_exons_chromosomes.gff3.gz",
+					descr : "",
+					category : "Gene Prediction"
+				},
+				{
+					name : "Augustus",
+					html_link : "/datasets/au8_scaffold_with_exons_chromosomes.gff3.gz",
+					descr : "",
+					category : "Gene Prediction"
+				},
+				{
+					name : "Fgenesh++ with RNAseq",
+					html_link : "/datasets/fgeneshpp_with_rnaseq_chromosomes.gff3.gz",
+					descr : "",
+					category : "Gene Prediction"
+				},
+				{
+					name : "Fgenesh++",
+					html_link : "/datasets/fgeneshpp_no_rnaseq_chromosomes.gff3.gz",
+					descr : "",
+					category : "Gene Prediction"
+				},
+				{
+					name : "Fgenesh",
+					html_link : "/datasets/fgenesh_no_rnaseq_chromosomes.gff3.gz",
+					descr : "",
+					category : "Gene Prediction"
+				},
+				{
+					name : "Geneid",
+					html_link : "/datasets/geneid_scaffold_chromosomes.gff3.gz",
+					descr : "",
+					category : "Gene Prediction"
+				},
+				{
+					name : "NSCAN",
+					html_link : "/datasets/NSCAN_Amel-Aflo_masked_lastz_Katharina_with_UTR_with_exons_chromosomes.gff3.gz",
+					descr : "",
+					category : "Gene Prediction"
+				},
+				{
+					name : "Abdomen 454",
+					html_link : "/datasets/Amel_4.5_abdomen_chromosomes.gff.gz",
+					descr : "",
+					category : "Transcript Alignment and Assembly"
+				},
+				{
+					name : "Brain Ovary 454",
+					html_link : "/datasets/Amel_4.5_brain_ovary_chromosomes.gff.gz",
+					descr : "",
+					category : "Transcript Alignment and Assembly"
+				},
+				{
+					name : "Embryo 454",
+					html_link : "/datasets/Amel_4.5_embryo_chromosomes.gff.gz",
+					descr : "",
+					category : "Transcript Alignment and Assembly"
+				},
+				{
+					name : "Larvae 454",
+					html_link : "/datasets/Amel_4.5_larvae_chromosomes.gff.gz",
+					descr : "",
+					category : "Transcript Alignment and Assembly"
+				},
+				{
+					name : "Mixed Antennae 454",
+					html_link : "/datasets/Amel_4.5_mixed_antennae_chromosomes.gff.gz",
+					descr : "",
+					category : "Transcript Alignment and Assembly"
+				},
+				{
+					name : "Ovary 454",
+					html_link : "/datasets/Amel_4.5_ovary_chromosomes.gff.gz",
+					descr : "",
+					category : "Transcript Alignment and Assembly"
+				},
+				{
+					name : "Testes 454",
+					html_link : "/datasets/Amel_4.5_testes_chromosomes.gff.gz",
+					descr : "",
+					category : "Transcript Alignment and Assembly"
+				},
+				{
+					name : "NCBI dbEST",
+					html_link : "/datasets/Amel_4.5_NCBI_EST_chromosomes.gff.gz",
+					descr : "",
+					category : "Transcript Alignment and Assembly"
+				},
+				{
+					name : "Forager Brain Cufflinks",
+					html_link : "/datasets/Amel_4.5_forager_fixed_IDS_chromosomes.gff.gz",
+					descr : "",
+					category : "Transcript Alignment and Assembly"
+				},
+				{
+					name : "Nurse Brain Cufflinks",
+					html_link : "/datasets/Amel_4.5_nurse_fixed_IDS_chromosomes.gff.gz",
+					descr : "",
+					category : "Transcript Alignment and Assembly"
+				},
+				{
+					name : "A. dorsata protein",
+					html_link : "/datasets/ador_final_v_amel_exonerate_30id_30aln.gff3.gz",
+					descr : "",
+					category : "Protein Alignment"
+				},
+				{
+					name : "A. florea protein",
+					html_link : "/datasets/aflo_final_v_amel_exonerate_30id_30aln.gff3.gz",
+					descr : "",
+					category : "Protein Alignment"
+				},
+				{
+					name : "RepeatMasker",
+					html_link : "/datasets/Amel_4.5_chromosomes_repbase_plus_known_repeatmasker.gff3.gz",
+					descr : "",
+					category : "Repeats"
+				},
+			]
+		},
+		ador : {
+			name : "Apis dorsata",
+			assembly : "Ador_1.3",
+			dataset : [
+				{
+					name : "Expanded-Comparative Gene Set",
+					html_link : "/datasets/Ador_comparative_gene_set.gff3.gz",
+					descr : "",
+					category : "Gene Prediction"
 				}
 			]
 		},
-		hippo : {
-			name : "Hippo",
-			assembly : "string",
+		aflor : {
+			name : "Apis florea",
+			assembly : "Aflo_1.0",
 			dataset : [
 				{
-					name : "string",
-					html_link : "www.hippo.com",
-					descr : "showing hippos",
-					category : "stuffffffs"
+					name : "Expanded-Comparative Gene Set",
+					html_link : "/datasets/Aflo_comparative_gene_set.gff3.gz",
+					descr : "",
+					category : "Gene Prediction"
 				}
 			]
-		},
+		}
 	}
 };

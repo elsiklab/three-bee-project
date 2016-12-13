@@ -3,24 +3,27 @@ var app     = express();
 var path    = require("path");
 var passport = require("passport");
 var passport_http = require("passport-http");
-
+var port = 4444
 
 //app.use(express.static(path.join(__dirname, 'resources')));
 app.use('/resources', express.static('resources'));
+app.use('/datasets', express.static('datasets'));
 
-passport.use(new passport_http.BasicStrategy(
-  function(username, password, done) {
-    console.log("Inside middleware");
-    if (username.valueOf() === 'test1' && password.valueOf() === 'test1') {
-      console.log("VALID credentials");
+passport.use(
+  new passport_http.BasicStrategy(
+    function(username, password, done) {
+      console.log("Inside middleware");
+      if (username.valueOf() === 'test' && password.valueOf() === 'test') {
+        console.log("VALID credentials");
         return done(null, true);
+      }
+      else {
+        console.log("INVALID credentials");
+        return done(null, false);
+      }
     }
-    else {
-      console.log("INVALID credentials");
-      return done(null, false);
-    }
-  }
-));
+  )
+);
 
 app.get('/',
   passport.authenticate('basic', { session: false }),
@@ -38,10 +41,10 @@ app.get('/index.html',
 
 app.use(function (req, res, next) {
   console.log(req.url);
-  console.log("Servinc 404.html");
+  console.log("Serving 404.html");
   res.status(404).sendFile(path.join(__dirname+'/404.html'));
 })
 
-app.listen(4444);
+app.listen(port);
 
-console.log("Running at Port 4444");
+console.log(`Running at Port ${port}`);
