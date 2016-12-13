@@ -6,7 +6,7 @@ var ORGANISMS = {
 			dataset : [
 				{
 					name : "Expanded-Comparative Gene Set",
-					html_link : "/three-bee-project/datasets/Amel_comparative_gene_set.gff3.gz",
+					html_link : "/datasets/Amel_comparative_gene_set.gff3.gz",
 					descr : "",
 					category : "Gene Prediction"
 				},

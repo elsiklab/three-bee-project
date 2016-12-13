@@ -6,8 +6,8 @@ var passport_http = require("passport-http");
 var port = 4444
 
 //app.use(express.static(path.join(__dirname, 'resources')));
-app.use('/three-bee-project/resources', express.static('resources'));
-app.use('/three-bee-project/datasets', express.static('datasets'));
+app.use('/resources', express.static('resources'));
+app.use('/datasets', express.static('datasets'));
 
 passport.use(
   new passport_http.BasicStrategy(
@@ -29,21 +29,14 @@ app.get('/',
   passport.authenticate('basic', { session: false }),
   function(req, res) {
     console.log("Redirecting / to /index.html after successful authentication");
-    res.redirect('/three-bee-project/index.html');
+    res.redirect('/index.html');
 });
 
-app.get('/three-bee-project/index.html',
+app.get('/index.html',
   passport.authenticate('basic', { session: false }),
   function(req, res) {
     console.log("Serving /index.html after successful authentication");
     res.sendFile(path.join(__dirname+'/index.html'));
-});
-
-app.get('/three-bee-project',
-  passport.authenticate('basic', { session: false }),
-  function(req, res) {
-    console.log("Redirecting /three-bee-project to /index.html after successful authentication");
-    res.redirect('/three-bee-project/index.html');
 });
 
 app.use(function (req, res, next) {
